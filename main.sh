@@ -7,7 +7,7 @@
 # In case you want to add more repos, clone 
 # them in repos directory, copy lines from 32
 # to 33 and paste respectively after 48th line 
-# (Example: `screen -S <repo_name> -X stuff './git-repo-watcher -d ~/repos/<repo_name>" -h ~/repos/hooks/<repo_name>\n'`) 
+# (Example: `screen -S <repo_name> -X stuff './git-repo-watcher -d repos/<repo_name>" -h repos/hooks/<repo_name>^M'`) 
 # Then create a new hook file for building, look 
 # https://github.com/kolbasa/git-repo-watcher for more info. 
 # Also add new line after 30th and add a new screen session 
@@ -29,22 +29,22 @@ screen -dmS title
 screen -dmS geyser
 screen -dmS protocol
 
-screen -S ecob -X stuff './git-repo-watcher -d repos/EcoBosses -h repos/hooks/ecobosses\n'
+screen -S ecob -X stuff './git-repo-watcher -d repos/EcoBosses" -h repos/hooks/ecobosses^M'
 echo "Started watching EcoBosses for changes!"
 
-screen -S ecoe -X stuff './git-repo-watcher -d repos/EcoEnchants -h repos/hooks/ecoenchants\n'
+screen -S ecoe -X stuff './git-repo-watcher -d repos/EcoEnchants" -h repos/hooks/ecoenchants^M'
 echo "Started watching EcoEnchants for changes!"
 
-screen -S plotq -X stuff './git-repo-watcher -d repos/PlotSquared -h repos/hooks/plotsquared\n'
+screen -S plotq -X stuff './git-repo-watcher -d repos/PlotSquared" -h repos/hooks/plotsquared^M'
 echo "Started watching PlotSquared for changes!"
 
-screen -S title -X stuff './git-repo-watcher -d repos/TitleManager -h repos/hooks/titlemanager\n'
+screen -S title -X stuff './git-repo-watcher -d repos/TitleManager" -h repos/hooks/titlemanager^M'
 echo "Started watching TitleManager for changes!"
 
-screen -S geyser -X stuff './git-repo-watcher -d repos/Geyser -h repos/hooks/Geyser\n'
+screen -S geyser -X stuff './git-repo-watcher -d repos/Geyser" -h repos/hooks/Geyser^M'
 echo "Started watching Geyser for changes!"
 
-screen -S protocol -X stuff './git-repo-watcher -d repos/ProtocolLib -h repos/hooks/protocollib\n'
+screen -S protocol -X stuff './git-repo-watcher -d repos/ProtocolLib" -h repos/hooks/protocollib^M'
 echo "Started watching ProtocolLib for changes!"
 screen -list
 echo "Builds will be exported to $HOME/repos/builds upon new changes!"

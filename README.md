@@ -23,8 +23,7 @@ Run `main.sh` to execute watchers, execute screen sessions and kill old screen s
 
 If you want to add more repos, clone it first, then add the following into the code respectively:
 ```bash
-screen -S <repo_name> -X stuff './git-repo-watcher -d ~/repos/<repo_name>" -h ~/repos/hooks/<repo_name>\n'
-```
+screen -S <repo_name> -X stuff './git-repo-watcher -d repos/<repo_name>" -h repos/hooks/<repo_name>^M'```
 Then create a new hook file for building, look https://github.com/kolbasa/git-repo-watcher#customizations for more info (Thank you [@kolbasa](https://github.com/kolbasa) for providing the watcher component). Don't forget to add a new screen session for the new watcher:
 ```bash
 screen -dmS <repo_name>
