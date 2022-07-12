@@ -34,7 +34,9 @@ screen -dmS <repo_name>
 
 ## Feedback
 
-If you have any feedback or found issues, open an issue or DM me on Discord: `MtkoGaming_TW#0001`
+If you have any feedback or ideas, share them in [discussions](https://github.com/DemsarMa/git-watcher-builder/discussions).
+
+Have you found an issue? Report it [here](https://github.com/DemsarMa/git-watcher-builder/issues), or you can DM me on Discord: `MtkoGaming_TW#0001`
 
 
 ## Roadmap
