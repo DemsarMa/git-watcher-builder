@@ -1,9 +1,17 @@
 #/usr/bin/bash
 
-# Upon starting, all repos NEEDS to be cloned at least once in repos directory!
+# Upon starting, all repos NEEDS to be cloned 
+# at least once in repos directory!
 
 # Builds are headed to repos/builds
-# In case you want to add more repos, clone them in repos directory, copy lines from 26 to 27 and paste respectively after 42nd line (Example: `screen -S <repo_name> -X stuff './git-repo-watcher -d ~/repos/<repo_name>" -h ~/repos/hooks/<repo_name>\n'` Then create a new hook file for building, look https://github.com/kolbasa/git-repo-watcher for more info. Also add new line after 22nd and add a new screen session (Example: `screen -dmS <repo_name>`)
+# In case you want to add more repos, clone 
+# them in repos directory, copy lines from 34
+# to 35 and paste respectively after 50th line 
+# (Example: `screen -S <repo_name> -X stuff './git-repo-watcher -d ~/repos/<repo_name>" -h ~/repos/hooks/<repo_name>\n'`) 
+# Then create a new hook file for building, look 
+# https://github.com/kolbasa/git-repo-watcher for more info. 
+# Also add new line after 30th and add a new screen session 
+# (Example: `screen -dmS <repo_name>`)
 
 echo "Starting up..."
 
