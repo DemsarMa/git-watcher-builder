@@ -53,3 +53,7 @@ All contributions are more than welcome. You can first look on a [roadmap](https
 
 - [@DemsarMa](https://github.com/DemsarMa)
 
+## Disclaimer
+
+I am not affiliated by any plugin or repo devs in this project.
+Some plugins introduced there are examples to show how it works.
