@@ -19,8 +19,8 @@ change_pulled() {
     echo "Changes pulled: $*"
     echo "Starting build for commit: $@"
     ./gradlew build
-    mkdir ~/git-watcher-builder/builds/TitleManager
-    cp ~/git-watcher-builder/repos/TitleManager/build/libs/TitleManager-all.jar ~/git-watcher-builder/builds/TitleManager
+    mkdir ~/git-watcher-builder/builds/EssentialsX
+    cp ~/git-watcher-builder/repos/EssentialsX/jars/EssentialsX*.jar ~/git-watcher-builder/builds/EssentialsX/
 }
 
 # $1 - Git repository name

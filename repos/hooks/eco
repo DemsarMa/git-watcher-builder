@@ -19,8 +19,8 @@ change_pulled() {
     echo "Changes pulled: $*"
     echo "Starting build for commit: $@"
     ./gradlew build
-    mkdir ~/git-watcher-builder/builds/EcoBosses
-    cp ~/git-watcher-builder/repos/EcoBosses/build/libs/EcoBosses-*.jar ~/git-watcher-builder/builds/EcoBosses/
+    mkdir ~/git-watcher-builder/builds/eco
+    cp ~/git-watcher-builder/repos/eco/build/libs/eco-*-all.jar ~/git-watcher-builder/builds/eco/
 }
 
 # $1 - Git repository name

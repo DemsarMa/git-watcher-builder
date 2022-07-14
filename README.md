@@ -7,7 +7,14 @@ This tool provides automatic watching, compilation and gathering jar files from 
 
 
 
+## Perquisites
 
+- <kbd>bash</kbd>
+- <kbd>git</kbd>
+- <kbd>wget</kbd>
+- <kbd>unzip</kbd>
+
+Some things require Java 17 to be installed.
 ## Installation
 
 To get started, clone this project:
@@ -15,11 +22,17 @@ To get started, clone this project:
 ```bash
   git clone https://github.com/DemsarMa/git-watcher-builder.git
 ```
+Run `install.sh` only once to install example repositories.
 Upon running `main.sh` for the first time, it will create a `builds` directory for storing jar files.
 
 ## Usage
 
-Run `main.sh` to execute watchers, execute screen sessions and kill old screen sessions. If you've made any changes to any hook file, you have to re-run `main.sh` to refresh watchers.
+Run `main.sh` to execute watchers, execute screen sessions and kill old screen sessions. The script will exit, but you can always check watchers by going to the specific screen:
+```bash
+screen -r <repo_name>
+```
+
+If you've made any changes to any hook file, you have to re-run `main.sh` to refresh watchers.
 
 If you want to add more repos, clone it first, then add the following into the code respectively:
 ```bash
@@ -31,6 +44,8 @@ Then create a new hook file for building, look https://github.com/kolbasa/git-re
 ```bash
 screen -dmS <repo_name>
 ```
+
+Note: Some repositories doesn't have Gradle compiler, you can add the repository for the watcher to look and a CI link to get the jar from (Example: ViaVersion), or try with a tool [Nightly](https://nightly.link) (thank you [@oprypin](https://github.com/oprypin)!).
 
 ## Feedback
 
@@ -44,6 +59,7 @@ Have you found an issue? Report it [here](https://github.com/DemsarMa/git-watche
 - Ability to add GitHub repositories without adding them in the code (using prefixes and a template)
 - Automatic watching on [SpigotMC](https://spigotmc.org) for new updates
 - Separated watchers when restarting (to not restart all of them) (using options)
+- Notifying upon successful/failed builds via webhook or on Discord.
 ## Contributing
 
 All contributions are more than welcome. You can first look on a [roadmap](https://github.com/DemsarMa/git-watcher-builder#roadmap) if you want to implement new features or want to fix bugs/issues. To get started, open a Pull request.

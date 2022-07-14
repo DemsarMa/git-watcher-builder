@@ -18,9 +18,14 @@ no_changes() {
 change_pulled() {
     echo "Changes pulled: $*"
     echo "Starting build for commit: $@"
-    ./gradlew build
-    mkdir ~/git-watcher-builder/builds/PlotSquared
-    cp ~/git-watcher-builder/repos/PlotSquared/build/libs/PlotSquared-*.jar ~/git-watcher-builder/builds/PlotSquared
+    mkdir ~/git-watcher-builder/builds/ViaVersion
+    mkdir ~/git-watcher-builder/builds/ViaVersion_t
+    wget -O ~/git-watcher-builder/builds/ViaVersion_t/ViaVersion_DEV.zip https://nightly.link/ViaVersion/ViaVersion/workflows/gradle/master/artifact.zip
+    unzip ~/git-watcher-builder/builds/ViaVersion_t/ViaVersion_DEV.zip ~/git-watcher-builder/builds/ViaVersion_t/
+    rm ~/git-watcher-builder/builds/ViaVersion_t/ViaVersion_DEV.zip
+    mv ViaVersion-Bungee-*.jar ~/git-watcher-builder/builds/ViaVersion/ViaVersion-Bungee-*.jar
+    rm -rf ~/git-watcher-builder/builds/ViaVersion_t
+    
 }
 
 # $1 - Git repository name
