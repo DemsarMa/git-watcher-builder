@@ -13,13 +13,15 @@
 
 echo "Starting up..."
 
-if [[ -f "./builds" ]]; then
+if [[ -d "./builds" ]]; 
+then
     echo "Found directory builds"
 else
+echo "Builds directory not found, creating..."
 mkdir builds
 fi
 
-if ! screen -list | grep -q "viav" -q "essx" -q "protocol" -q "eco" -q "geyser"; then
+if screen -list | egrep "viav|essx|protocol|eco|geyser"; then
     echo "Found all screens, refreshing..."
     screen -X -S viav quit
     screen -X -S essx quit
@@ -39,19 +41,19 @@ screen -dmS eco
 screen -dmS geyser
 fi
 
-screen -S viav -X stuff './git-repo-watcher -d repos/ViaVersion" -h repos/hooks/viaversion^M'
+screen -S viav -X stuff './git-repo-watcher -d "repos/ViaVersion" -h "repos/hooks/viaversion"^M'
 echo "Started watching ViaVersion for changes!"
 
-screen -S essx -X stuff './git-repo-watcher -d repos/EssentialsX" -h repos/hooks/essentialsx^M'
+screen -S essx -X stuff './git-repo-watcher -d "repos/EssentialsX" -h "repos/hooks/essentialsx"^M'
 echo "Started watching EssentialsX for changes!"
 
-screen -S protocol -X stuff './git-repo-watcher -d repos/ProtocolLib" -h repos/hooks/protocollib^M'
+screen -S protocol -X stuff './git-repo-watcher -d "repos/ProtocolLib" -h "repos/hooks/protocollib"^M'
 echo "Started watching ProtocolLib for changes!"
 
-screen -S eco -X stuff './git-repo-watcher -d repos/eco" -h repos/hooks/eco^M'
+screen -S eco -X stuff './git-repo-watcher -d "repos/eco" -h "repos/hooks/eco"^M'
 echo "Started watching eco for changes!"
 
-screen -S geyser -X stuff './git-repo-watcher -d repos/Geyser" -h repos/hooks/geyser^M'
+screen -S geyser -X stuff './git-repo-watcher -d "repos/Geyser" -h "repos/hooks/geyser"^M'
 echo "Started watching Geyser for changes!"
 screen -list
 echo "Builds will be exported to $HOME/repos/builds upon new changes!"
